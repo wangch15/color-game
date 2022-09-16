@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>色弱遊戲 Made by WCH</title>
+  <link rel="stylesheet" href="./css/color-game.css">
+</head>
+
+<body>
+  <!-- 
+        1/遊戲初始畫面
+          開始遊戲按鈕 > 進入遊戲畫面
+          規則說明
+        
+        2/遊戲畫面
+          計時框-計時結束結算 > 進入結算畫面
+          (暫停時間按鈕)
+          方框 w500xh500/ 填色(如何只讓一個顏色不同-並且是相近色?) / 決定幾乘幾方格(根據分數決定if判斷)
+            0分>2X2
+            1分>3X3
+            2分>4X4
+            3分>5X5
+            5分>6X6
+            7分>7X7
+            10分>8X8
+
+          點擊事件>成功加分>下個方框(換色)
+                >錯誤不扣分>維持原方框(繼續找不同色)
+
+        3.結算畫面
+            輸出分數>(評語if)
+            重新開始按鈕>回到遊戲初始畫面or直接再來一次
+     -->
+
+
+  <main>
+    <!--start - flex -->
+    <div class="start-page displayflex">
+      <h1>色弱遊戲</h1>
+      <div class="infobox">
+        <div>
+          <p>1. 限時 30 秒。</p>
+          <p>2. 找出所有色塊內唯一不同顏色的色塊</p>
+          <p>3. 答對加 1 分，並進入下一階段。</p>
+          <p>4. 答錯不倒扣，盡量嘗試吧！</p>
+        </div>
+      </div>
+      <div class="start-btn-box">
+        <button id="game-start">GAME START</button>
+      </div>
+    </div>
+    <!--game - flex -->
+    <div class="game-page displaynone">
+      <nav>
+        <div class="score-area">
+          <div class="scorebox">
+            <span>SCORE</span>
+            <div id="score-count">0</div>
+          </div>
+        </div>
+        <div class="timer-area">
+          <div class="timebox">
+            <span>TIME</span>
+            <div id="time-count"></div>
+          </div>
+        </div>
+      </nav>
+      <div class="gamebox-area">
+        <div id="gamebox">
+          <!-- <div class="randombox lv1"></div> -->
+        </div>
+      </div>
+    </div>
+
+    <!--score - flex -->
+    <div class="score-page displaynone">
+      <div class="result-box">
+        <img class="result-img" src="" alt="">
+        <h1 class="result-box-h1">您獲得了  分，根本是  等級</h1>
+        <p class="result-box-p">不是我要虧你，再回去練練吧</p>
+      </div>
+      <div class="play-again-box">
+        <button id="play-again">PLAY AGAIN</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="./color-game.js"></script>
+</body>
+
+</html>
